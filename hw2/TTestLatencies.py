@@ -3,7 +3,7 @@ import os
 import numpy as np
 
 # Set the number of data points to collect for each file_size to reduce variation
-number_trials = 5
+number_trials = 3
 #put your access key and secret key information here
 #NOTE: You'll need to also uncomment the comment towards the bottom.
 bucket_name = "s3://jakes-dsc-291-bucket/"
@@ -17,8 +17,8 @@ MB_10 = "10MB.txt"
 MB_100 = "100MB.txt"
 GB_1 = "1GB.txt"
 
-file_names = [KB_1, KB_10, KB_100, MB_1, MB_10, MB_100, GB_1]
-file_sizes = [1e3, 1e4, 1e5, 1e6, 1e7, 1e8, 1e9]
+file_names = [KB_1, KB_10]#, KB_100, MB_1, MB_10, MB_100, GB_1]
+file_sizes = [1e3, 1e4]#, 1e5, 1e6, 1e7, 1e8, 1e9]
 
 latencies = np.zeros((len(file_names), number_trials))
 
