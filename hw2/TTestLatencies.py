@@ -6,7 +6,7 @@ import numpy as np
 number_trials = 3
 #put your access key and secret key information here
 #NOTE: You'll need to also uncomment the comment towards the bottom.
-bucket_name = "s3://jakes-dsc-291-bucket/"
+bucket_name = "s3://jakes-bucket-dsc-291/"
 
 
 KB_1 = "1KB.txt"
@@ -26,7 +26,7 @@ for i in range(len(file_names)):
 
 	for j in range(number_trials):
 		t1 = time.time()
-		os.system(f"s3cmd put {file_names[i]} {bucket_name}")# --access_key={ACCESS_KEY}--secret_key={SECRET_KEY}")
+		os.system("/home/ubuntu/.local/bin/s3cmd put %s %s --access_key=AKIAR4UELFPSEPNDEM5R --secret_key=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 --region us-west-2 --force"%(file_names[i], bucket_name))# --access_key={ACCESS_KEY}--secret_key={SECRET_KEY}")
 		t2 = time.time()
 		time_diff = t2 - t1
 		latencies[i,j] = time_diff
