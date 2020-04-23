@@ -27,7 +27,7 @@ for i in range(len(file_names)):
 	print("Sending %s"%file_names[i])
 	for j in range(number_trials):
 		t1 = time.time()
-		os.system("/home/ubuntu/.local/bin/s3cmd put %s %s --access_key=AKIAR4UELFPSEPNDEM5R --secret_key=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 --region us-west-2 --force"%(file_names[i], bucket_name))# --access_key={ACCESS_KEY}--secret_key={SECRET_KEY}")
+		os.system("/home/ubuntu/.local/bin/s3cmd put %s %s --access_key= --secret_key= --region us-west-2 --force"%(file_names[i], bucket_name))# --access_key={ACCESS_KEY}--secret_key={SECRET_KEY}")
 		t2 = time.time()
 		time_diff = t2 - t1
 		latencies[j,i] = time_diff
